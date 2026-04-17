@@ -16,7 +16,7 @@ const links: Links[] = [
 
 export default function Footer() {
     return (
-        <footer className="bg-[#0f2d5e] absolute bottom-0 left-0 grid grid-cols-3 justify-items-center items-center text-white h-100 w-full">
+        <footer className="bg-[#0f2d5e] static bottom-0 left-0 grid grid-cols-3 justify-items-center items-center text-white h-100 w-full">
             <div>
                 <Image src="/logo/data-dolphin.png" alt="logo" width={200} height={200} className=""/>
             </div>
