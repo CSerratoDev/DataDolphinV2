@@ -16,12 +16,17 @@ const links: Links[] = [
 
 export default function Footer() {
     return (
-        <footer className="bg-[#0f2d5e] grid grid-cols-3 items-center text-white h-100 w-full p-4">
+        <footer className="bg-[#0f2d5e] absolute bottom-0 left-0 grid grid-cols-3 justify-items-center items-center text-white h-100 w-full">
             <div>
-                <Image src="/logo/datadolphin.png" alt="logo" width={100} height={100} className=""/>
+                <Image src="/logo/data-dolphin.png" alt="logo" width={200} height={200} className=""/>
             </div>
-            <div>
-
+            <div className="flex flex-col space-y-2">
+                <h1 className="text-2xl font-bold">Desarrolladores</h1>
+                <a href="/https://github.com/CSerratoDev">cserratodev</a>
+                <a href="#">JuanCll09</a>
+                <a href="https://github.com/Osva0421">osvi0421</a>
+                <a href="#">diego</a>
+                <a href="/https://github.com/marizpebeltran">marizpebeltran</a>
             </div>
             <div>
                 <h1 className="text-2xl font-bold">Redes Sociales</h1>

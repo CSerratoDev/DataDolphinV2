@@ -10,7 +10,7 @@ export default function Header() {
     return (
         <header className="navbar fixed w-full">
             <div className="logo">
-                <Image width={50} height={50} src="/logo/datadolphin.png" alt="Logo"/>
+                <Image width={50} height={50} src="/logo/data-dolphin.png" alt="Logo"/>
             </div>
 
             <button
