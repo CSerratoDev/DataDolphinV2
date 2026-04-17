@@ -48,19 +48,19 @@ const FeatureCard = ({ icon, title, description }: FeatureCardProps) => (
 
 export default function VaultPage() {
     return (
-        <div id="vault" className="bg-[#f8fafc] min-h-[700] w-full grid grid-cols-1 md:grid-cols-2 gap-12 px-16 py-20 items-center">
+        <div id="vault" className="bg-[#f8fafc] min-h-[700] w-full grid grid-cols-1 md:grid-cols-2 gap-12 px-8 py-10 md:px-16 md:py-20 items-center">
             <div className="flex flex-col gap-8">
-                <div className="space-y-4">
-                    <h1 className="text-5xl font-bold text-slate-900 leading-tight">
-                        Motor de Ingesta y<br /> Aumento de Documentos.
+                <div className="space-y-4 md:text-start">
+                    <h1 className="text-4xl font-extrabold text-[#0f172a] mb-4">
+                        Motor de Ingesta y Aumento de Documentos.
                     </h1>
-                    <p className="text-slate-600 text-lg max-w-md">
+                    <p className="text-slate-500 text-lg max-w-md">
                         El agente utiliza IA multimodal para realizar ingeniería inversa de documentos de n páginas,
                         identificando campos faltantes y automatizando llenado en procesos de manera asincrona.
                     </p>
                 </div>
 
-                <div className="grid grid-cols-2 gap-6">
+                <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                     <FeatureCard
                         icon={<Fingerprint size={24} />}
                         title="Orquestación de documentos"
@@ -74,7 +74,7 @@ export default function VaultPage() {
                 </div>
             </div>
 
-            <div className="relative flex justify-center items-center h-full">
+            <div className="hidden relative md:flex justify-center items-center h-full">
                 <div className="bg-white/40 rounded-3xl p-12 backdrop-blur-sm shadow-xl w-full max-w-md space-y-6">
                     <div className="bg-white rounded-2xl p-6 shadow-sm relative">
                         <div className="bg-blue-100 p-2 rounded-lg w-fit mb-4">

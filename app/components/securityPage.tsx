@@ -73,7 +73,7 @@ export default function SecurityPage() {
                             label="variables"
                             icon={<Wallet />}
                             tags={["TAX CODES", "LEDGERS"]}
-                            className="h-full min-h-[450]"
+                            className="h-full min-h-[400]"
                         />
                     </div>
 
