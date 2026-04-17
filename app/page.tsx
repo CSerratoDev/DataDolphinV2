@@ -7,13 +7,9 @@ export default function App() {
   return (
     <>
       <PlatformPage/>
-      <br/>
       <SecurityPage/>
-      <br/>
-      <StatusPage/>
-      <br/>
       <VaultPage/>
-      <br/>
+      <StatusPage/>
     </>
   );
 }
