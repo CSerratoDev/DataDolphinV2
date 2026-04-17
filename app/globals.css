@@ -52,19 +52,40 @@ body {
   gap: 30px;
 }
 
+/* --- ANIMACIÓN DE LOS ENLACES DEL MENÚ --- */
 .nav-links a {
   text-decoration: none;
   color: var(--text-gray);
   font-weight: 500;
   font-size: 0.95rem;
-  transition: color 0.3s;
+  position: relative;
+  padding-bottom: 5px;
+  transition: color 0.3s ease;
 }
 
+.nav-links a::after {
+  content: '';
+  position: absolute;
+  width: 0;
+  height: 2px;
+  bottom: 0;
+  left: 50%;
+  background-color: #3b82f6;
+  transition: all 0.3s ease-in-out;
+  transform: translateX(-50%);
+}
+
+.nav-links a:hover::after,
+.nav-links a.active::after {
+  width: 100%;
+}
+
+.nav-links a:hover,
 .nav-links a.active {
   color: #3b82f6;
-  border-bottom: 2px solid #3b82f6;
-  padding-bottom: 5px;
 }
+
+/* ----------------------------------------- */
 
 .nav-actions {
   display: flex;
