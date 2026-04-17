@@ -1,6 +1,6 @@
 export default function PlatformPage() {
     return (
-        <div className="w-full h-[700] bg-[#C3C6D1] ">
+        <div id="platform" className="w-full h-[700] bg-[#f8fafc] ">
             <section className="hero">
                 <div className="badge">
                     <span className="icon-shield"></span> Government-Grade Paperwork Automation

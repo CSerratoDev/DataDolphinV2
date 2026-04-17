@@ -1,6 +1,6 @@
 export default function SecurityPage() {
     return (
-        <div>
+        <div id="security">
             SecurityPage
         </div>
     )

@@ -3,7 +3,7 @@ interface FeatureCardProps {
     title: string;
     description: string;
 }
- 
+
 // Local lightweight icon components to avoid dependency on 'lucide-react'
 const Fingerprint = ({ size = 24, className = "" }: { size?: number; className?: string }) => (
     <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" className={className} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
@@ -13,14 +13,14 @@ const Fingerprint = ({ size = 24, className = "" }: { size?: number; className?:
         <path d="M8 15c1 1.5 2.5 2 4 2s3-0.5 4-2" />
     </svg>
 );
- 
+
 const ShieldCheck = ({ size = 24, className = "" }: { size?: number; className?: string }) => (
     <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" className={className} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
         <path d="M12 2l7 4v5c0 5-3 9-7 11-4-2-7-6-7-11V6l7-4z" />
         <path d="M9 12l2 2 4-4" />
     </svg>
 );
- 
+
 const CreditCard = ({ size = 24, className = "" }: { size?: number; className?: string }) => (
     <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" className={className} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
         <rect x="2" y="5" width="20" height="14" rx="2" ry="2" />
@@ -28,7 +28,7 @@ const CreditCard = ({ size = 24, className = "" }: { size?: number; className?: 
         <rect x="6" y="14" width="4" height="2" rx="1" ry="1" />
     </svg>
 );
- 
+
 const Globe = ({ size = 24, className = "" }: { size?: number; className?: string }) => (
     <svg xmlns="http://www.w3.org/2000/svg" width={size} height={size} viewBox="0 0 24 24" fill="none" stroke="currentColor" className={className} strokeWidth={2} strokeLinecap="round" strokeLinejoin="round">
         <circle cx="12" cy="12" r="10" />
@@ -37,7 +37,7 @@ const Globe = ({ size = 24, className = "" }: { size?: number; className?: strin
         <path d="M4 4c4 2 8 2 16 0" />
     </svg>
 );
- 
+
 const FeatureCard = ({ icon, title, description }: FeatureCardProps) => (
     <div className="bg-white/60 p-6 rounded-xl flex flex-col gap-3 shadow-sm">
         <div className="text-slate-700">{icon}</div>
@@ -48,14 +48,14 @@ const FeatureCard = ({ icon, title, description }: FeatureCardProps) => (
 
 export default function VaultPage() {
     return (
-        <div className="bg-[#f8fafc] min-h-[700] w-full grid grid-cols-1 md:grid-cols-2 gap-12 px-16 py-20 items-center">
+        <div id="vault" className="bg-[#f8fafc] min-h-[700] w-full grid grid-cols-1 md:grid-cols-2 gap-12 px-16 py-20 items-center">
             <div className="flex flex-col gap-8">
                 <div className="space-y-4">
                     <h1 className="text-5xl font-bold text-slate-900 leading-tight">
                         Motor de Ingesta y<br /> Aumento de Documentos.
                     </h1>
                     <p className="text-slate-600 text-lg max-w-md">
-                        El agente utiliza IA multimodal para realizar ingeniería inversa de documentos de n páginas, 
+                        El agente utiliza IA multimodal para realizar ingeniería inversa de documentos de n páginas,
                         identificando campos faltantes y automatizando llenado en procesos de manera asincrona.
                     </p>
                 </div>

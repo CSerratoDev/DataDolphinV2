@@ -1,15 +1,16 @@
 'use client';
 
+import Image from 'next/image';
+import Link from 'next/link';
 import { useState } from 'react';
 
 export default function Header() {
     const [menuAbierto, setMenuAbierto] = useState(false);
 
     return (
-        <header className="navbar">
+        <header className="navbar fixed w-full">
             <div className="logo">
-                <span className="logo-icon">💧</span>
-                <strong>DataDolphin</strong>
+                <Image width={50} height={50} src="/logo/datadolphin.png" alt="Logo"/>
             </div>
 
             <button
@@ -22,20 +23,20 @@ export default function Header() {
             </button>
 
             <nav className={`nav-links ${menuAbierto ? 'menu-abierto' : ''}`}>
-                <a href="#" className="active">Platform</a>
-                <a href="#">Vault</a>
-                <a href="#">Security</a>
-                <a href="#">Status</a>
+                <a href="#platform" className="active">Platform</a>
+                <a href="#vault">Vault</a>
+                <a href="#security">Security</a>
+                <a href="#status">Status</a>
 
                 <div className="mobile-actions">
-                    <a href="#" className="login-link-mobile">Log In</a>
-                    <button className="btn-primary-header">Get Started</button>
+                    <Link href="/login" className="login-link-mobile">Log In</Link>
+                    <Link href="/signin" className="btn-primary-header">Get Started</Link>
                 </div>
             </nav>
 
             <div className="nav-actions">
-                <a href="#" className="login-link">Log In</a>
-                <button className="btn-primary-header">Get Started</button>
+                <Link href="/login" className="login-link">Log In</Link>
+                <Link href="/signin" className="btn-primary-header">Get Started</Link>
             </div>
         </header>
     );

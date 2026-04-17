@@ -32,6 +32,11 @@ body {
   padding: 20px 80px;
   background: white;
   border-bottom: 1px solid var(--border-color);
+  position: fixed; /* Asegura el comportamiento */
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 50; /* No necesitas 1000 si manejas bien los niveles */
 }
 
 .logo {

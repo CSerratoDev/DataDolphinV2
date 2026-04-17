@@ -2,7 +2,7 @@ import { taxonomias, type Taxonomia } from "../data/taxonomia";
 
 export default function StatusPage() {
     return (
-        <div className="bg-[#f8fafc] min-h-[700] w-full px-16 py-20">
+        <div id="status" className="bg-[#f8fafc] min-h-[700] w-full px-16 py-20">
             <div className="flex flex-col w-full items-center mb-16">
                 <h1 className="text-5xl font-bold text-slate-900 leading-tight">
                     Velocidad y Clasificación
