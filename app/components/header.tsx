@@ -30,9 +30,11 @@ export default function Header() {
     }, []);
 
     return (
-        <header className="navbar fixed w-full">
-            <div className="logo">
-                <Image width={50} height={50} src="/logo/data-dolphin.png" alt="Logo" />
+        <header className="navbar fixed w-full flex items-center justify-between">
+            <div className="logo flex-1">
+                <Link href="/">
+                    <Image width={50} height={50} src="/logo/data-dolphin.png" alt="Logo" />
+                </Link>
             </div>
 
             <button
@@ -44,7 +46,7 @@ export default function Header() {
                 <span></span>
             </button>
 
-            <nav className={`nav-links ${menuAbierto ? 'menu-abierto' : ''}`}>
+            <nav className={`nav-links flex-none mx-auto ${menuAbierto ? 'menu-abierto' : ''}`}>
                 <a
                     href="#platform"
                     className={seccionActiva === 'platform' ? 'active' : ''}
@@ -80,7 +82,7 @@ export default function Header() {
                 </div>
             </nav>
 
-            <div className="nav-actions">
+            <div className="nav-actions flex-1 flex justify-end">
                 <Link href="/login" className="login-link">Iniciar Sesión</Link>
                 <Link href="/signup" className="btn-primary-header">Registrarse</Link>
             </div>
