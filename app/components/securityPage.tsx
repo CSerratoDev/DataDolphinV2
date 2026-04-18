@@ -19,7 +19,7 @@ const DomainCard = ({ title, value, label, icon, tags, dark, className }: Domain
             <div className="flex justify-between items-start">
                 {/* Contenedor del Icono */}
                 <div className={`p-3 rounded-xl ${dark ? 'bg-white/10' : 'bg-blue-100/50'}`}>
-                    {React.cloneElement(icon as React.ReactElement, {
+                    {React.cloneElement(icon as React.ReactElement<any, any>, {
                         size: 24,
                         className: dark ? 'text-white' : 'text-blue-700'
                     })}
