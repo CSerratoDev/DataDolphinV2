@@ -75,7 +75,7 @@ export default function SignupPage() {
                             </div>
                         </div>
 
-                        <h2 className="text-center text-3xl font-extrabold text-[#0a3161] mb-2">Create Account</h2>
+                        <h2 className="text-center text-3xl font-extrabold text-[#0a3161] mb-2">Crear cuenta</h2>
                         
                         {error && (
                             <p className="text-red-500 text-xs bg-red-50 p-3 rounded-lg border border-red-100 mb-4 text-center">
@@ -111,7 +111,7 @@ export default function SignupPage() {
                             </div>
 
                             <div>
-                                <label className="block text-xs font-semibold text-slate-600 mb-1.5 ml-1">Password</label>
+                                <label className="block text-xs font-semibold text-slate-600 mb-1.5 ml-1">Contraseña</label>
                                 <input
                                     name="password"
                                     type="password"
@@ -142,14 +142,14 @@ export default function SignupPage() {
                                 disabled={loading}
                                 className="w-full flex justify-center items-center gap-2 py-3.5 px-4 rounded-xl shadow-lg font-bold text-white bg-[#0a3161] hover:bg-[#082a50] transition-all transform active:scale-95 disabled:opacity-70"
                             >
-                                {loading ? "Registrando..." : "Sign Up →"}
+                                {loading ? "Registrando..." : "Registrarse →"}
                             </button>
                         </form>
 
                         <div className="mt-8 text-center text-sm">
-                            <span className="text-slate-600">Already have an account?</span>{' '}
+                            <span className="text-slate-600">¿Ya tienes una cuenta?</span>{' '}
                             <Link href="/login" className="font-semibold text-blue-600 hover:text-blue-500">
-                                Login
+                                Iniciar sesión
                             </Link>
                         </div>
                     </div>

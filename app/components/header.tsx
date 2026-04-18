@@ -66,14 +66,14 @@ export default function Header() {
                     className={seccionActiva === 'security' ? 'active' : ''}
                     onClick={() => { setSeccionActiva('security'); setMenuAbierto(false); }}
                 >
-                    Seguridad
+                    Dominios
                 </a>
                 <a
                     href="/#status"
                     className={seccionActiva === 'status' ? 'active' : ''}
                     onClick={() => { setSeccionActiva('status'); setMenuAbierto(false); }}
                 >
-                    Clasificación
+                    Métricas
                 </a>
 
                 <div className="mobile-actions">
