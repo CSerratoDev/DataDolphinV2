@@ -73,7 +73,7 @@ export default function Header() {
                     className={seccionActiva === 'status' ? 'active' : ''}
                     onClick={() => { setSeccionActiva('status'); setMenuAbierto(false); }}
                 >
-                    Estado
+                    Clasificación
                 </a>
 
                 <div className="mobile-actions">
