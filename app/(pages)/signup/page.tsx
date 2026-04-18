@@ -3,23 +3,19 @@ import Link from 'next/link';
 export default function SignupPage() {
     return (
         <div className="min-h-screen flex">
-            {/* Columna Izquierda: Imagen de Fondo Profesionall (Ocupa el 50%) */}
             <div className="hidden lg:flex lg:w-1/2 relative">
                 <div
                     className="absolute inset-0 bg-cover bg-center"
                     style={{
-                        // Reemplaza esta URL por la ruta real de tu imagen profesional
                         backgroundImage: "url('https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=2070&auto=format&fit=crop')",
                     }}
                 />
-                <div className="absolute inset-0 bg-blue-900/20" /> {/* Superposición sutil de color */}
+                <div className="absolute inset-0 bg-blue-900/20" />
             </div>
 
             <div className="w-full lg:w-1/2 flex items-center justify-center bg-slate-50 p-8 sm:p-12 lg:p-16">
                 <div className="w-full max-w-md">
-                    {/* Tarjeta de Formulario con Bordes Redondeados */}
                     <div className="bg-white p-10 shadow-2xl border border-slate-100 rounded-[2.5rem]">
-                        {/* Logo de oceanic.intelligence (Ejemplo) */}
                         <div className="flex justify-center mb-6">
                             <div className="w-12 h-12 flex items-center justify-center rounded-xl bg-[#0a3161]/5 border border-[#0a3161]/10">
                                 <svg
@@ -47,30 +43,30 @@ export default function SignupPage() {
 
                         <form className="space-y-5" action="#" method="POST">
                             <div>
-                                <label htmlFor="full-name" className="block text-xs font-semibold text-slate-600 mb-1.5 ml-1">
-                                    Full Name
+                                <label htmlFor="nombre" className="block text-xs font-semibold text-slate-600 mb-1.5 ml-1">
+                                    Nombre
                                 </label>
                                 <input
-                                    id="full-name"
-                                    name="full-name"
+                                    id="nombre"
+                                    name="nombre"
                                     type="text"
                                     required
                                     className="appearance-none block w-full px-5 py-3.5 border border-slate-200 rounded-xl shadow-sm placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm transition-all bg-slate-50/50"
-                                    placeholder="Full Name"
+                                    placeholder="Nombre completo"
                                 />
                             </div>
 
                             <div>
-                                <label htmlFor="work-email" className="block text-xs font-semibold text-slate-600 mb-1.5 ml-1">
-                                    Work Email
+                                <label htmlFor="correo" className="block text-xs font-semibold text-slate-600 mb-1.5 ml-1">
+                                    Correo
                                 </label>
                                 <input
-                                    id="work-email"
-                                    name="work-email"
+                                    id="correo"
+                                    name="correo"
                                     type="email"
                                     required
                                     className="appearance-none block w-full px-5 py-3.5 border border-slate-200 rounded-xl shadow-sm placeholder-slate-400 focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm transition-all bg-slate-50/50"
-                                    placeholder="Work Email"
+                                    placeholder="Correo electrónico"
                                 />
                             </div>
 
@@ -89,6 +85,23 @@ export default function SignupPage() {
                             </div>
 
                             <div>
+                                <label htmlFor="role" className="block text-xs font-semibold text-slate-600 mb-1.5 ml-1">
+                                    Rol
+                                </label>
+                                <select
+                                    id="role"
+                                    name="role"
+                                    required
+                                    defaultValue=""
+                                    className="appearance-none block w-full px-5 py-3.5 border border-slate-200 rounded-xl shadow-sm focus:outline-none focus:ring-2 focus:ring-blue-500 focus:border-blue-500 sm:text-sm transition-all bg-slate-50/50 text-slate-600"
+                                >
+                                    <option value="" disabled>Selecciona un rol</option>
+                                    <option value="usuario">Usuario</option>
+                                    <option value="admin">Admin</option>
+                                </select>
+                            </div>
+
+                            <div>
                                 <button
                                     type="submit"
                                     className="w-full flex justify-center items-center gap-2 py-3.5 px-4 border border-transparent rounded-xl shadow-lg text-sm font-bold text-white bg-[#0a3161] hover:bg-[#082a50] focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-blue-500 transition-all transform hover:scale-[1.01]"
@@ -97,28 +110,6 @@ export default function SignupPage() {
                                 </button>
                             </div>
                         </form>
-
-                        <div className="mt-8">
-                            <div className="relative mb-6">
-                                <div className="absolute inset-0 flex items-center">
-                                    <div className="w-full border-t border-slate-200" />
-                                </div>
-                                <div className="relative flex justify-center text-sm">
-                                    <span className="px-3 bg-white text-slate-500">Or Sign up with:</span>
-                                </div>
-                            </div>
-
-                            <div className="grid grid-cols-2 gap-3.5">
-                                <button className="w-full inline-flex justify-center items-center gap-2.5 py-3 px-4 border border-slate-200 rounded-xl bg-white text-sm font-medium text-slate-600 hover:bg-slate-50 transition-all shadow-sm">
-                                    {/* Aquí va el Icono de Google */}
-                                    Google
-                                </button>
-                                <button className="w-full inline-flex justify-center items-center gap-2.5 py-3 px-4 border border-slate-200 rounded-xl bg-white text-sm font-medium text-slate-600 hover:bg-slate-50 transition-all shadow-sm">
-                                    {/* Aquí va el Icono de Microsoft */}
-                                    Microsoft
-                                </button>
-                            </div>
-                        </div>
 
                         <div className="mt-8 text-center text-sm">
                             <span className="text-slate-600">Already have an account?</span>{' '}
