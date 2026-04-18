@@ -76,13 +76,13 @@ export default function Header() {
 
                 <div className="mobile-actions">
                     <Link href="/login" className="login-link-mobile">Log In</Link>
-                    <Link href="/signin" className="btn-primary-header">Get Started</Link>
+                    <Link href="/signup" className="btn-primary-header">Get Started</Link>
                 </div>
             </nav>
 
             <div className="nav-actions">
                 <Link href="/login" className="login-link">Log In</Link>
-                <Link href="/signin" className="btn-primary-header">Get Started</Link>
+                <Link href="/signup" className="btn-primary-header">Get Started</Link>
             </div>
         </header>
     );
