@@ -1,8 +1,10 @@
-import type { Metadata } from "next";
+'use client'; // El Layout principal ahora necesita ser Client Component para leer la ruta
+
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "./components/header";
 import Footer from "./components/footer";
+import { usePathname } from "next/navigation";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -14,16 +16,15 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-export const metadata: Metadata = {
-  title: "DataDolphinV2",
-  description: "Document Augmentation Engine",
-};
-
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const pathname = usePathname();
+  
+  const isDashboard = pathname.startsWith("/dashboard");
+
   return (
     <html
       lang="en"
@@ -31,11 +32,13 @@ export default function RootLayout({
     >
       <body className="min-h-full flex flex-col" suppressHydrationWarning>
         <main className="">
-          <Header/>
-          <section>
-          {children}
+          {!isDashboard && <Header />}
+          
+          <section className={!isDashboard ? "py-0" : ""}>
+            {children}
           </section>
-          <Footer/>
+
+          {!isDashboard && <Footer />}
         </main>
       </body>
     </html>
