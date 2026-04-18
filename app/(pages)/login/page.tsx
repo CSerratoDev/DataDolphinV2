@@ -41,9 +41,9 @@ export default function Login() {
             <div className="hidden lg:flex lg:w-1/2 relative">
                 <div
                     className="absolute inset-0 bg-cover bg-center"
-                    style={{ backgroundImage: "url('https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop')" }}
+                    style={{ backgroundImage: "url('https://vivaqueretaro.com/img/tourism/turismoMedico/moscati/fondo-torre.jpg')" }}
                 />
-                <div className="absolute inset-0 bg-[#0a3161]/30 backdrop-blur-[2px]" />
+                <div className="" />
             </div>
         </div>
     );
