@@ -7,6 +7,17 @@
   --bg-light: #f8fafc;
   --border-color: #e2e8f0;
 }
+:root {
+  --sidebar: #0f172a;
+  --navy: #1e3a5f;
+  --bg: #f8fafc;
+  --muted: #64748b;
+}
+
+body {
+  background-color: var(--bg);
+  color: #1e293b;
+}
 
 @theme inline {
   --color-background: var(--bg-light);
@@ -20,10 +31,13 @@ html {
 }
 
 body {
-  margin-top: 4rem;
   background-color: var(--bg-light);
   color: var(--text-dark);
   line-height: 1.6;
+}
+
+.app-home {
+  padding-top: 4rem;
 }
 
 .navbar {
@@ -296,4 +310,287 @@ body {
     width: 100%;
     justify-content: center;
   }
+}
+
+/* Variables de DataDolphin */
+:root {
+  --bg-deep: #060D1A;
+  --bg-base: #0A1628;
+  --bg-surface: #0F2040;
+  --bg-card: #132848;
+  --bg-hover: #1A3560;
+  --accent: #00C2FF;
+  --accent-glow: rgba(0, 194, 255, 0.25);
+  --accent-dim: rgba(0, 194, 255, 0.12);
+  --success: #00D68F;
+  --success-bg: rgba(0, 214, 143, 0.1);
+  --error: #FF4D6D;
+  --error-bg: rgba(255, 77, 109, 0.1);
+  --warning: #FFB800;
+  --warning-bg: rgba(255, 184, 0, 0.1);
+  --text-primary: #E8F4FD;
+  --text-secondary: #7A9CC4;
+  --text-muted: #3D5F85;
+  --border: rgba(0, 194, 255, 0.12);
+  --border-strong: rgba(0, 194, 255, 0.28);
+  --radius: 16px;
+  --radius-sm: 10px;
+  --radius-lg: 24px;
+  --font: 'Sora', sans-serif;
+  --mono: 'JetBrains Mono', monospace;
+  --shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
+  --shadow-accent: 0 0 32px rgba(0, 194, 255, 0.15);
+}
+
+.grid-bg {
+  background-image:
+    linear-gradient(rgba(0, 194, 255, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 194, 255, 0.03) 1px, transparent 1px);
+  background-size: 40px 40px;
+}
+
+.augmentation-shell {
+  min-height: calc(100vh - 4rem);
+  background: var(--bg-light);
+  color: var(--text-dark);
+  padding-bottom: 32px;
+  padding-top: 4rem;
+  --bg-deep: #f8fafc;
+  --bg-base: #eef4ff;
+  --bg-surface: #ffffff;
+  --bg-card: #ffffff;
+  --bg-hover: #e6f0ff;
+  --accent: #0f2d5e;
+  --accent-glow: rgba(15, 45, 94, 0.12);
+  --accent-dim: rgba(15, 45, 94, 0.08);
+  --success: #0f9d74;
+  --success-bg: rgba(15, 157, 116, 0.12);
+  --error: #d91f3b;
+  --error-bg: rgba(217, 31, 59, 0.12);
+  --warning: #e37400;
+  --warning-bg: rgba(227, 116, 0, 0.12);
+  --text-primary: #0f172a;
+  --text-secondary: #475569;
+  --text-muted: #64748b;
+  --border: rgba(15, 23, 42, 0.08);
+  --border-strong: rgba(15, 23, 42, 0.12);
+  --shadow: 0 20px 50px rgba(15, 23, 42, 0.08);
+  --shadow-accent: 0 0 32px rgba(15, 45, 94, 0.1);
+}
+
+.augmentation-shell .stepper {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 10px;
+}
+
+.augmentation-shell .step-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 14px 16px;
+  border-radius: 16px;
+  background: #fff;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  color: var(--text-primary);
+}
+
+.augmentation-shell .step-item.active {
+  background: var(--accent);
+  color: white;
+  box-shadow: 0 20px 50px rgba(0, 82, 196, 0.18);
+}
+
+.augmentation-shell .step-item.done {
+  background: rgba(15, 150, 120, 0.08);
+  color: var(--text-primary);
+}
+
+.augmentation-shell .step-circle {
+  width: 32px;
+  height: 32px;
+  border-radius: 9999px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(15, 45, 94, 0.08);
+  color: var(--accent);
+  font-weight: 700;
+}
+
+.augmentation-shell .step-item.active .step-circle {
+  background: white;
+  color: var(--accent);
+}
+
+.augmentation-shell .step-label {
+  font-size: 13px;
+  font-weight: 600;
+}
+
+.augmentation-shell .btn-secondary {
+  color: var(--text-primary);
+  border-color: rgba(15, 23, 42, 0.12);
+}
+
+.augmentation-shell .btn-secondary:hover {
+  background: rgba(15, 45, 94, 0.06);
+}
+
+.augmentation-shell .input-field {
+  background: #fff;
+  border-color: rgba(15, 23, 42, 0.12);
+  color: var(--text-primary);
+}
+
+.augmentation-shell .input-field::placeholder {
+  color: var(--text-muted);
+}
+
+.augmentation-shell .card {
+  background: #fff;
+  border-color: rgba(15, 23, 42, 0.08);
+  box-shadow: var(--shadow);
+}
+
+.augmentation-shell .badge {
+  background: rgba(15, 23, 42, 0.05);
+  color: var(--text-primary);
+}
+
+.augmentation-shell .dashboard-header {
+  background: #fff;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+}
+
+.augmentation-shell .dashboard-header span,
+.augmentation-shell .dashboard-header button,
+.augmentation-shell .dashboard-header .step-label {
+  color: var(--text-primary);
+}
+
+.augmentation-shell .dashboard-header button {
+  border-color: rgba(15, 23, 42, 0.12);
+}
+
+@media (max-width: 768px) {
+  .augmentation-shell {
+    padding-top: 4rem;
+    padding-left: 16px;
+    padding-right: 16px;
+  }
+
+  .augmentation-shell .dashboard-header {
+    padding: 12px 16px;
+    flex-wrap: wrap;
+  }
+
+  .augmentation-shell .stepper {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    max-width: none;
+    margin: 0 auto 32px;
+  }
+
+  .augmentation-shell .step-item {
+    padding: 10px 12px;
+    justify-content: center;
+  }
+
+  .augmentation-shell .step-circle {
+    width: 28px;
+    height: 28px;
+    font-size: 12px;
+  }
+
+  .augmentation-shell .step-label {
+    font-size: 12px;
+  }
+}
+
+.btn-primary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 14px 28px;
+  background: linear-gradient(135deg, #00C2FF, #0088CC);
+  color: #fff;
+  font-size: 15px;
+  font-weight: 600;
+  border-radius: var(--radius-sm);
+  transition: all 0.2s ease;
+  width: 100%;
+}
+.btn-primary:hover {
+  background: linear-gradient(135deg, #33CFFF, #00A8EE);
+  box-shadow: 0 4px 20px rgba(0, 194, 255, 0.4);
+  transform: translateY(-1px);
+}
+.btn-primary:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.btn-secondary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  padding: 13px 28px;
+  background: transparent;
+  color: var(--accent);
+  font-size: 15px;
+  font-weight: 600;
+  border: 1.5px solid var(--border-strong);
+  border-radius: var(--radius-sm);
+  transition: all 0.2s ease;
+  width: 100%;
+}
+.btn-secondary:hover {
+  background: var(--accent-dim);
+  border-color: var(--accent);
+}
+
+.card {
+  background: var(--bg-card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 24px;
+  box-shadow: var(--shadow);
+}
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  padding: 4px 12px;
+  border-radius: 100px;
+  font-size: 12px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  text-transform: uppercase;
+}
+.badge-success { background: var(--success-bg); color: var(--success); border: 1px solid rgba(0, 214, 143, 0.25); }
+.badge-error { background: var(--error-bg); color: var(--error); border: 1px solid rgba(255, 77, 109, 0.25); }
+.badge-warning { background: var(--warning-bg); color: var(--warning); border: 1px solid rgba(255, 184, 0, 0.25); }
+.badge-info { background: var(--accent-dim); color: var(--accent); border: 1px solid var(--border-strong); }
+
+.input-field {
+  width: 100%;
+  padding: 13px 16px;
+  background: var(--bg-surface);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  font-size: 14px;
+  transition: all 0.2s;
+}
+.input-field::placeholder { color: var(--text-muted); }
+.input-field:focus {
+  border-color: var(--accent);
+  background: var(--bg-card);
+  box-shadow: 0 0 0 3px var(--accent-dim);
 }

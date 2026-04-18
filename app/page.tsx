@@ -5,7 +5,7 @@ import VaultPage from "./components/vaultPage";
 
 export default function App() {
   return (
-    <div className="flex flex-col gap-16 w-full">
+    <div className="app-home flex flex-col gap-16 w-full">
       <section id="platform">
         <PlatformPage />
       </section>

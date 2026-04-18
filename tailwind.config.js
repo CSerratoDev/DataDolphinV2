@@ -1,17 +1,19 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: [    
-    "./app/**/*.{js,ts,jsx,tsx,mdx}",
-    "./pages/**/*.{js,ts,jsx,tsx,mdx}",
-    "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}"
-  ],
+  content: ["./app/**/*.{js,ts,jsx,tsx}"],
   theme: {
     extend: {
-      keyframes: {
+      colors: {
+        dolphin: {
+          sidebar: '#0f172a',
+          navy:    '#1e3a5f',
+          bg:      '#f8fafc',
+          console: '#0d1b2a',
+          muted:   '#64748b',
+          border:  '#e2e8f0',
+        }
       }
-    },
+    }
   },
-  plugins: [
-  ],
+  plugins: [],
 }
