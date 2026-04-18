@@ -57,9 +57,9 @@ export default function SecurityPage() {
       <div className="max-w-7xl mx-auto">
         {/* Header */}
         <header className="mb-12">
-          <h1 className="text-4xl font-extrabold text-[#0f172a] mb-4">Taxonomy Domains</h1>
+          <h1 className="text-4xl font-extrabold text-[#0f172a] mb-4">Dominios de taxonomía</h1>
           <p className="text-slate-500 max-w-2xl leading-relaxed">
-            Classification matrix across primary operational vectors. Data points represent unique variables actively categorized.
+            Matriz de clasificación en función de los vectores operacionales primarios. Los puntos de datos representan variables únicas que se categorizan activamente.
           </p>
         </header>
 
@@ -71,7 +71,7 @@ export default function SecurityPage() {
             <DomainCard
               title="Fiscal"
               value="84.2k"
-              label="variables"
+              label="Variables"
               icon={<Wallet />}
               tags={["TAX CODES", "LEDGERS"]}
               className="h-full min-h-[450px]"
@@ -80,31 +80,31 @@ export default function SecurityPage() {
 
           {/* Columna Central y Derecha (Grid interno) */}
           <DomainCard
-            title="Governmental"
+            title="Gubernamental"
             value="12.5k"
-            label="Regulated variables"
+            label="Variables reguladas"
             icon={<Landmark />}
           />
 
           <DomainCard
-            title="Corporate"
+            title="Corporativa"
             value="45.1k"
-            label="Contractual variables"
+            label="Variables contractuales"
             icon={<Briefcase />}
             dark={true}
           />
 
           <DomainCard
-            title="Academic"
+            title="Academica"
             value="8.9k"
-            label="Research variables"
+            label="Variables de investigación"
             icon={<GraduationCap />}
           />
 
           <DomainCard
-            title="International"
+            title="Internacional"
             value="22.4k"
-            label="Cross-border variables"
+            label="Variables transfronterizas"
             icon={<Globe />}
           />
         </div>
