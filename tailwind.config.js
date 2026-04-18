@@ -1,17 +1,12 @@
 /** @type {import('tailwindcss').Config} */
-module.exports = {
-  content: [    
+export default {
+  content: [
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
-    "./node_modules/@heroui/theme/dist/**/*.{js,ts,jsx,tsx}"
   ],
   theme: {
-    extend: {
-      keyframes: {
-      }
-    },
+    extend: {},
   },
-  plugins: [
-  ],
+  plugins: [],
 }
