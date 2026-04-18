@@ -40,6 +40,10 @@ app.use(express.json({ limit: '50mb' }))
 app.use(express.urlencoded({ limit: '50mb', extended: true }))
 
 const FREE_VISION_MODELS = [
+    'anthropic/claude-3.5-sonnet:free',
+    'openai/gpt-4o-mini:free',
+    'google/gemini-2.0-flash:free',
+    'xai/grok-2-vision:free',
     'nvidia/nemotron-nano-12b-v2-vl:free',
     'google/gemma-4-31b-it:free',
     'google/gemma-4-26b-a4b-it:free',

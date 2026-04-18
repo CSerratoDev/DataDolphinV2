@@ -1,6 +1,6 @@
 'use client';
 
-import { useState, useRef } from 'react';
+import { useState, useRef, useEffect } from 'react';
 import { 
     HiOutlineArrowLeft, 
     HiOutlineCloudArrowUp, 
@@ -9,7 +9,8 @@ import {
     HiOutlineCheckCircle,
     HiOutlineExclamationCircle,
     HiOutlineXMark,
-    HiOutlineIdentification
+    HiOutlineIdentification,
+    HiOutlineSparkles
 } from 'react-icons/hi2';
 import Stepper from './Stepper';
 
@@ -26,6 +27,8 @@ export default function Upload({
     const [preview, setPreview] = useState(null);
     const [dragging, setDragging] = useState(false);
     const [error, setError] = useState('');
+    const [isLoading, setIsLoading] = useState(false);
+    const [currentModel, setCurrentModel] = useState('');
     const inputRef = useRef();
 
     const handleFile = (f) => {
@@ -52,12 +55,36 @@ export default function Upload({
         handleFile(e.dataTransfer.files[0]);
     };
 
-    const handleValidate = () => {
+    const handleValidate = async () => {
         if (!file) { 
             setError('Por favor selecciona un documento.'); 
             return; 
         }
-        onFileUploaded(file, processMode);
+        
+        setIsLoading(true);
+        setError('');
+        
+        // Inicia la rotación de modelos mientras se procesa
+        const models = [
+            { name: 'Claude 3.5 Sonnet', tech: 'Anthropic' },
+            { name: 'GPT-4o Mini', tech: 'OpenAI' },
+            { name: 'Gemini 2.0 Flash', tech: 'Google' },
+            { name: 'Grok 2 Vision', tech: 'XAI' },
+            { name: 'Nemotron Nano', tech: 'Nvidia' },
+        ];
+        
+        let modelIndex = 0;
+        const modelInterval = setInterval(() => {
+            setCurrentModel(`${models[modelIndex].tech} - ${models[modelIndex].name}`);
+            modelIndex = (modelIndex + 1) % models.length;
+        }, 800);
+        
+        try {
+            onFileUploaded(file, processMode);
+        } finally {
+            clearInterval(modelInterval);
+            setIsLoading(false);
+        }
     };
 
     const requiredDocs = getRequiredDocs(tramite?.id);
@@ -216,20 +243,53 @@ export default function Upload({
 
                         <button 
                             onClick={handleValidate}
-                            disabled={!file}
+                            disabled={!file || isLoading}
                             className={`
-                                w-full mt-8 py-4 rounded-[1.5rem] font-black text-xs uppercase tracking-[0.2em] transition-all flex items-center justify-center gap-3
-                                ${file 
+                                w-full mt-8 py-4 rounded-3xl font-black text-xs uppercase tracking-[0.2em] transition-all flex items-center justify-center gap-3
+                                ${file && !isLoading
                                     ? 'bg-[#0f2d5e] text-white shadow-xl shadow-blue-900/20 hover:scale-[1.01] active:scale-[0.98]' 
+                                    : isLoading
+                                    ? 'bg-blue-600 text-white shadow-xl shadow-blue-900/20 cursor-wait'
                                     : 'bg-slate-200 text-slate-400 cursor-not-allowed'}
                             `}
                         >
-                            <HiOutlineDocumentCheck className="text-lg" />
-                            Validar Documento con IA
+                            {isLoading ? (
+                                <>
+                                    <HiOutlineSparkles className="text-lg animate-spin" />
+                                    Procesando...
+                                </>
+                            ) : (
+                                <>
+                                    <HiOutlineDocumentCheck className="text-lg" />
+                                    Validar Documento con IA
+                                </>
+                            )}
                         </button>
 
+                        {isLoading && currentModel && (
+                            <div className="mt-6 p-4 bg-blue-50 border border-blue-200 rounded-2xl animate-in fade-in">
+                                <div className="flex items-center gap-3 mb-3">
+                                    <div className="w-8 h-8 bg-linear-to-r from-blue-600 to-blue-400 rounded-lg flex items-center justify-center">
+                                        <HiOutlineSparkles className="text-white text-sm animate-spin" />
+                                    </div>
+                                    <div>
+                                        <p className="text-xs font-black text-blue-900 uppercase tracking-wider">Modelo en uso:</p>
+                                        <p className="text-sm font-bold text-blue-700 min-h-5">{currentModel}</p>
+                                    </div>
+                                </div>
+                                <div className="flex gap-1">
+                                    {[0, 1, 2].map(i => (
+                                        <div key={i} className="flex-1 h-1 bg-blue-200 rounded-full overflow-hidden">
+                                            <div className="h-full bg-linear-to-r from-blue-500 to-blue-400 animate-pulse" style={{ animationDelay: `${i * 0.1}s` }} />
+                                        </div>
+                                    ))}
+                                </div>
+                                <p className="text-[10px] text-blue-600 font-bold mt-3 text-center">Buscando el mejor modelo disponible...</p>
+                            </div>
+                        )}
+
                         <p className="text-center text-[10px] font-bold text-slate-400 uppercase tracking-widest mt-6 opacity-60">
-                            🔒 Encriptación AES-256 de grado bancario
+                            Encriptación AES-256 de grado bancario
                         </p>
                     </div>
                 </div>

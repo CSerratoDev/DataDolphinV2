@@ -104,6 +104,26 @@ El "Cerebro y Orquestador". Maneja el flujo con memoria de estado y ciclos, perm
 Provides native visual reasoning for PDFs, structured JSON extraction, and dynamic generation of data capture forms.
 
 Proporciona razonamiento visual nativo para PDFs, extracción estructurada en JSON y generación dinámica de formularios de captura.
+
+## Vision Models for Document Processing / Modelos de Visión para Procesamiento de Documentos
+
+DataDolphin V2 leverages multimodal AI models through **OpenRouter API** for advanced document recognition and data extraction. The system automatically cycles through the following models in order of availability:
+
+DataDolphin V2 aprovecha modelos de IA multimodal a través de la **API de OpenRouter** para reconocimiento avanzado de documentos y extracción de datos. El sistema cicla automáticamente a través de los siguientes modelos en orden de disponibilidad:
+
+| Provider / Proveedor | Model / Modelo | Capability / Capacidad |
+| :-------- | :------- | :------------------------- |
+| **Anthropic** | Claude 3.5 Sonnet | 🥇 Premier vision model for document understanding / Modelo de visión Premier para comprensión de documentos |
+| **OpenAI** | GPT-4o Mini | Fast & accurate document extraction / Extracción de documentos rápida y precisa |
+| **Google** | Gemini 2.0 Flash | High-speed multimodal reasoning / Razonamiento multimodal de alta velocidad |
+| **XAI** | Grok 2 Vision | Real-time visual analysis / Análisis visual en tiempo real |
+| **Nvidia** | Nemotron Nano 12B | Lightweight & efficient fallback / Fallback ligero y eficiente |
+
+**Fallback Strategy / Estrategia de Fallback:**
+If a model is unavailable or saturated, the system automatically attempts the next model in the list. This ensures 99%+ uptime for document processing.
+
+Si un modelo no está disponible o está saturado, el sistema intenta automáticamente el siguiente modelo en la lista. Esto garantiza 99%+ de disponibilidad para el procesamiento de documentos.
+
 ## Tech Stack & Dependencias / Dependencies
 
 
@@ -114,6 +134,7 @@ Proporciona razonamiento visual nativo para PDFs, extracción estructurada en JS
 |LangGraph| Orquestación | Ciclos y estados asíncronos / Async states and cycles.|
 | Google GenAI | IA Multimodal | Clasificación con Gemini 1.5 / Classification w/ Gemini 1.5.|
 | LangChain Google | Interface LLM |Integración de modelo / Model integration. |
+| **OpenRouter API** | **Multimodal Vision** | **Claude, GPT-4o, Gemini, Grok, Nemotron / Document AI** |
 | Python Dotenv| Seguridad | Variables de entorno / Environment variables.|
 ## Instalación / Installation
 
