@@ -52,19 +52,23 @@ export default function Dashboard() {
         try {
             const response = await fetch(`${process.env.NEXT_PUBLIC_API_URL}/api/documents/`, {
                 method: "POST",
-                body: formData, // No necesita headers de Content-Type, el navegador lo pone como multipart
+                body: formData,
             });
 
             if (!response.ok) throw new Error("Fallo en la carga");
 
             const data = await response.json();
+
+            // Sincronización con el Sidebar (layout.tsx)
+            window.dispatchEvent(new Event('refreshDocuments'));
+
             alert(`Archivo ${data.file_name} subido correctamente.`);
 
         } catch (err: any) {
             alert(`Error: ${err.message}`);
         } finally {
             setUploading(false);
-            e.target.value = ""; // Limpiar input
+            e.target.value = ""; // Limpiar input para permitir subir el mismo archivo
         }
     };
 
@@ -77,11 +81,7 @@ export default function Dashboard() {
 
     return (
         <div className="min-h-screen bg-[#f8fafc] text-slate-900">
-            <nav className="h-16 border-b border-slate-200 bg-white/80 backdrop-blur-md sticky top-0 z-40 px-8 flex items-center justify-between">
-                <div className="flex items-center gap-3">
-                    <Image src="/logo/datadolphin.png" alt="logo" width={30} height={30} />
-                    <span className="font-bold text-[#001f3f] text-lg tracking-tight">DataDolphin</span>
-                </div>
+            <nav className="h-16 border-b border-slate-200 bg-white/80 backdrop-blur-md sticky top-0 z-40 px-8 flex items-center justify-end">
 
                 <div className="flex items-center gap-6">
                     {/* Botón de subida oculto tras un label con estilo */}
@@ -117,29 +117,29 @@ export default function Dashboard() {
 
             <main className="max-w-7xl mx-auto p-10 space-y-10">
                 <header>
-                    <h1 className="text-4xl font-black text-[#001f3f] tracking-tight italic">Orchestration Overview</h1>
+                    <h1 className="text-4xl font-black text-[#001f3f] tracking-tight italic">Resumen de Orquestación</h1>
                 </header>
 
                 <section className="grid grid-cols-1 md:grid-cols-3 gap-8">
-                    <StatCard title="Total Documents Processed" value="1.4M" detail="↗ +12% this week" />
-                    <StatCard title="Active AI Agents" value="342" detail="Distributed Load: 68%" />
-                    <StatCard title="Capability Loading" value="System Ready" detail="PyMuPDF Core Modules" />
+                    <StatCard title="Documentos procesados" value="1.4M" detail="↗ +12% esta semana" />
+                    <StatCard title="Agentes de IA activos" value="342" detail="Carga distribuida: 68%" />
+                    <StatCard title="Estado de capacidades" value="Sistema listo" detail="Módulos centrales de PyMuPDF" />
                 </section>
 
                 <section className="grid grid-cols-1 lg:grid-cols-3 gap-10">
                     <div className="lg:col-span-2 space-y-6">
                         <div className="flex justify-between items-end">
                             <div>
-                                <h2 className="text-xl font-bold text-[#001f3f]">Asynchronous Queue</h2>
-                                <p className="text-xs text-slate-400 font-medium">Live document processing streams</p>
+                                <h2 className="text-xl font-bold text-[#001f3f]">Cola asincrónica</h2>
+                                <p className="text-xs text-slate-400 font-medium">Flujos de procesamiento de documentos en vivo</p>
                             </div>
-                            <span className="text-xs font-bold text-blue-600 cursor-pointer hover:underline">View All Streams</span>
+                            <span className="text-xs font-bold text-blue-600 cursor-pointer hover:underline">Ver todos los flujos</span>
                         </div>
 
                         <div className="space-y-3">
                             {[
-                                { name: "Passport Scan Batch #8842", sub: "Intl. Identity Verification Stream", status: "Processing" },
-                                { name: "Fiscal Report Q3 - TechCorp", sub: "Corporate Audit Stream", status: "Needs Approval", urgent: true },
+                                { name: "Lote de escaneos de pasaportes #8842", sub: "Flujo de verificación de identidad internacional", status: "Procesando" },
+                                { name: "Informe fiscal T3 - TechCorp", sub: "Flujo de auditoría corporativa", status: "Requiere aprobación", urgent: true },
                             ].map((task, i) => (
                                 <div key={i} className="bg-white border border-slate-100 p-5 rounded-2xl flex items-center justify-between shadow-sm hover:shadow-md transition-shadow">
                                     <div className="flex items-center gap-4">
@@ -160,12 +160,12 @@ export default function Dashboard() {
                     </div>
 
                     <div className="bg-[#001f3f] rounded-[2.5rem] p-8 text-white overflow-hidden relative shadow-2xl border border-white/10">
-                        <h2 className="text-[10px] font-black opacity-40 mb-6 uppercase tracking-[0.2em]">Skill Console</h2>
+                        <h2 className="text-[10px] font-black opacity-40 mb-6 uppercase tracking-[0.2em]">Consola de Capacidades</h2>
                         <div className="font-mono text-[11px] space-y-3 relative z-10 leading-relaxed">
-                            <p className="text-blue-400">{"> [INFO] Initializing clause extraction..."}</p>
-                            <p className="text-blue-300">{"> [DATA] Regex pattern matching complete."}</p>
-                            <p className="text-amber-400">{"> [WARN] Ambiguity detected in section 4.2."}</p>
-                            <p className="text-emerald-400">{"> [SUCCESS] Model sync with UAQ-Server."}</p>
+                            <p className="text-blue-400">{"> [INFO] Inicializando extracción de cláusulas..."}</p>
+                            <p className="text-blue-300">{"> [DATOS] Coincidencia de patrones regex completa."}</p>
+                            <p className="text-amber-400">{"> [ADVERTENCIA] Ambigüedad detectada en la sección 4.2."}</p>
+                            <p className="text-emerald-400">{"> [ÉXITO] Sincronización del modelo con UAQ-Server."}</p>
                         </div>
                         <div className="absolute bottom-0 left-0 right-0 h-40 bg-gradient-to-t from-[#001f3f] via-[#001f3f]/80 to-transparent" />
                     </div>
