@@ -56,9 +56,9 @@ export default function SecurityPage() {
             <div className="max-w-7xl mx-auto">
                 {/* Header */}
                 <header className="mb-12">
-                    <h1 className="text-4xl font-extrabold text-[#0f172a] mb-4">Taxonomy Domains</h1>
+                    <h1 className="text-4xl font-extrabold text-[#0f172a] mb-4">Dominios de Taxonomía</h1>
                     <p className="text-slate-500 max-w-2xl leading-relaxed">
-                        Classification matrix across primary operational vectors. Data points represent unique variables actively categorized.
+                        Matriz de clasificación a través de los principales vectores operativos. Los puntos de datos representan variables únicas categorizadas activamente.
                     </p>
                 </header>
 
@@ -72,38 +72,38 @@ export default function SecurityPage() {
                             value="84.2k"
                             label="variables"
                             icon={<Wallet />}
-                            tags={["TAX CODES", "LEDGERS"]}
+                            tags={["CÓDIGOS FISCALES", "LIBROS CONTABLES"]}
                             className="h-full min-h-[400]"
                         />
                     </div>
 
                     {/* Columna Central y Derecha (Grid interno) */}
                     <DomainCard
-                        title="Governmental"
+                        title="Gubernamental"
                         value="12.5k"
-                        label="Regulated variables"
+                        label="variables reguladas"
                         icon={<Landmark />}
                     />
 
                     <DomainCard
-                        title="Corporate"
+                        title="Corporativo"
                         value="45.1k"
-                        label="Contractual variables"
+                        label="variables contractuales"
                         icon={<Briefcase />}
                         dark={true}
                     />
 
                     <DomainCard
-                        title="Academic"
+                        title="Académico"
                         value="8.9k"
-                        label="Research variables"
+                        label="variables de investigación"
                         icon={<GraduationCap />}
                     />
 
                     <DomainCard
-                        title="International"
+                        title="Internacional"
                         value="22.4k"
-                        label="Cross-border variables"
+                        label="variables transfronterizas"
                         icon={<Globe />}
                     />
                 </div>
