@@ -46,28 +46,28 @@ export default function Header() {
 
             <nav className={`nav-links ${menuAbierto ? 'menu-abierto' : ''}`}>
                 <a
-                    href="#platform"
+                    href="/#platform"
                     className={seccionActiva === 'platform' ? 'active' : ''}
                     onClick={() => { setSeccionActiva('platform'); setMenuAbierto(false); }}
                 >
                     Plataforma
                 </a>
                 <a
-                    href="#vault"
+                    href="/#vault"
                     className={seccionActiva === 'vault' ? 'active' : ''}
                     onClick={() => { setSeccionActiva('vault'); setMenuAbierto(false); }}
                 >
                     Motor
                 </a>
                 <a
-                    href="#security"
+                    href="/#security"
                     className={seccionActiva === 'security' ? 'active' : ''}
                     onClick={() => { setSeccionActiva('security'); setMenuAbierto(false); }}
                 >
                     Seguridad
                 </a>
                 <a
-                    href="#status"
+                    href="/#status"
                     className={seccionActiva === 'status' ? 'active' : ''}
                     onClick={() => { setSeccionActiva('status'); setMenuAbierto(false); }}
                 >
