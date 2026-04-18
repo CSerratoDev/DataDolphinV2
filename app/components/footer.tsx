@@ -22,11 +22,11 @@ export default function Footer() {
             </div>
             <div className="flex flex-col space-y-2 pb-6">
                 <h1 className="text-2xl font-bold mb-4" >Desarrolladores</h1>
-                <a href="/https://github.com/CSerratoDev" target="_blank" rel="noopener noreferrer">cserratodev</a>
-                <a href="#" target="_blank" rel="noopener noreferrer">JuanCll09</a>
-                <a href="https://github.com/Osva0421" target="_blank" rel="noopener noreferrer">osvi0421</a>
-                <a href="#" target="_blank" rel="noopener noreferrer">diego</a>
-                <a href="/https://github.com/marizpebeltran" target="_blank" rel="noopener noreferrer">marizpebeltran</a>
+                <a href="/https://github.com/CSerratoDev" target="_blank" rel="noopener noreferrer">Alexis Serrato</a>
+                <a href="#" target="_blank" rel="noopener noreferrer">Juan Pablo</a>
+                <a href="https://github.com/Osva0421" target="_blank" rel="noopener noreferrer">Osvaldo Partida</a>
+                <a href="#" target="_blank" rel="noopener noreferrer">Diego Hernandez</a>
+                <a href="/https://github.com/marizpebeltran" target="_blank" rel="noopener noreferrer">Mario Arizpe</a>
             </div>
             <div className="pt-2 justify-items-center">
                 <h1 className="text-2xl font-bold mb-4">Redes Sociales</h1>
