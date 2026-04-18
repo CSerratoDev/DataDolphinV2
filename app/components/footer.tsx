@@ -9,22 +9,22 @@ type Links = {
 }
 
 const links: Links[] = [
-    {name: 'GitHub', href: 'https://github.com/CSerratoDev/DataDolphinV2', img_icon: <FaGithub /> },
-    {name: 'DevPost', href: 'https://devpost.com', img_icon: <FaDev /> },
-    {name: 'LinkedIn', href: '#', img_icon: <FaLinkedin /> }
+    { name: 'GitHub', href: 'https://github.com/CSerratoDev/DataDolphinV2', img_icon: <FaGithub /> },
+    { name: 'DevPost', href: 'https://devpost.com', img_icon: <FaDev /> },
+    { name: 'LinkedIn', href: '#', img_icon: <FaLinkedin /> }
 ]
 
 export default function Footer() {
     return (
         <footer className="bg-[#0f2d5e] static bottom-0 left-0 grid grid-cols-1 md:grid-cols-3 justify-items-center items-center text-center md:text-start text-white h-auto md:h-100 w-full py-10">
             <div className="pb-6">
-                <Image src="/logo/data-dolphin.png" alt="logo" width={200} height={200} className="invert brightness-0"/>
+                <Image src="/logo/data-dolphin.png" alt="logo" width={200} height={200} className="invert brightness-0" />
             </div>
             <div className="flex flex-col space-y-2 pb-6">
                 <h1 className="text-2xl font-bold mb-4" >Desarrolladores</h1>
                 <a href="/https://github.com/CSerratoDev" target="_blank" rel="noopener noreferrer">cserratodev</a>
                 <a href="#" target="_blank" rel="noopener noreferrer">JuanCll09</a>
-                <a href="https://github.com/Osva0421" target="_blank" rel="noopener noreferrer">osvi0421</a>
+                <a href="https://github.com/Osva0421" target="_blank" rel="noopener noreferrer">Osva0421</a>
                 <a href="#" target="_blank" rel="noopener noreferrer">diego</a>
                 <a href="/https://github.com/marizpebeltran" target="_blank" rel="noopener noreferrer">marizpebeltran</a>
             </div>
