@@ -32,7 +32,7 @@ export default function Header() {
     return (
         <header className="navbar fixed w-full">
             <div className="logo">
-                <Image width={50} height={50} src="/logo/data-dolphin.png" alt="Logo"/>
+                <Image width={50} height={50} src="/logo/data-dolphin.png" alt="Logo" />
             </div>
 
             <button
@@ -50,39 +50,39 @@ export default function Header() {
                     className={seccionActiva === 'platform' ? 'active' : ''}
                     onClick={() => { setSeccionActiva('platform'); setMenuAbierto(false); }}
                 >
-                    Platform
+                    Plataforma
                 </a>
                 <a
                     href="#vault"
                     className={seccionActiva === 'vault' ? 'active' : ''}
                     onClick={() => { setSeccionActiva('vault'); setMenuAbierto(false); }}
                 >
-                    Vault
+                    Motor
                 </a>
                 <a
                     href="#security"
                     className={seccionActiva === 'security' ? 'active' : ''}
                     onClick={() => { setSeccionActiva('security'); setMenuAbierto(false); }}
                 >
-                    Security
+                    Seguridad
                 </a>
                 <a
                     href="#status"
                     className={seccionActiva === 'status' ? 'active' : ''}
                     onClick={() => { setSeccionActiva('status'); setMenuAbierto(false); }}
                 >
-                    Status
+                    Estado
                 </a>
 
                 <div className="mobile-actions">
-                    <Link href="/login" className="login-link-mobile">Log In</Link>
-                    <Link href="/signup" className="btn-primary-header">Get Started</Link>
+                    <Link href="/login" className="login-link-mobile">Iniciar Sesión</Link>
+                    <Link href="/signup" className="btn-primary-header">Registrarse</Link>
                 </div>
             </nav>
 
             <div className="nav-actions">
-                <Link href="/login" className="login-link">Log In</Link>
-                <Link href="/signup" className="btn-primary-header">Get Started</Link>
+                <Link href="/login" className="login-link">Iniciar Sesión</Link>
+                <Link href="/signup" className="btn-primary-header">Registrarse</Link>
             </div>
         </header>
     );
